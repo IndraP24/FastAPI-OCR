@@ -1,0 +1,11 @@
+.hr {
+  width: 100%;
+  text-align: left;
+  margin-left: 0;
+}
+
+#bulk_result {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+}
