@@ -1,1 +1,48 @@
-hello
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FastAPI OCR</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      href="{{ url_for('static', path='/css/style.css') }}"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4"> OCR Tool - FastAPI </h1>
+        <p class="lead"> Extract text from images </p>
+      </div>
+
+      <label for="image_file">Select image(s)</label>
+      <br />
+      <input
+        type="file"
+        class="btn btn-warning"
+        id="image_file"
+        name="myfile"
+        multiple
+      />
+      <br />
+      <br />
+      <br />
+      <button class="btn btn-success" onclick="performOCR()">
+        Extract Text
+      </button>
+      <br />
+
+      <hr class="hr" />
+      <hr class="hr" />
+
+      <div id="bulk_result">
+    </div>
+  </body>
+</html>
