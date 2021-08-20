@@ -35,7 +35,7 @@ async def bulk_perform_ocr(request: Request, bg_tasks: BackgroundTasks):
         temp_file = _save_file_to_disk(
             image, path=folder_name, save_as=image.filename)
 
-    bg_tasks.add_task(ocr, ocr.read_images_from_dir,
+    bg_tasks.add_task(ocr.read_images_from_dir,
                       folder_name, write_to_file=True)
     return {"task_id": folder_name, "num_files": len(images)}
 
